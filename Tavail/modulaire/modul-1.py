@@ -5,3 +5,4 @@ def contient_doublon(t):
     if contient(s, x) :
      ajoute (s, x)
   return s
+
