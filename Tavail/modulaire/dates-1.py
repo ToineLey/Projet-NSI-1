@@ -2,10 +2,7 @@ def cree():
     return 0
 
 def contient(s,x):
-    if s &(1<<x)!=0:
-        return True
-    else: 
-        return False
+    return s[0] & (1 << x) != 0
 
 def ajoute(s,x):
-    return s | (1<<x)
+    s[0] = s[0] | (1<<x)
