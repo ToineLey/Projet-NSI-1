@@ -6,3 +6,8 @@ def contient(s,x):
 
 def ajoute(s,x):
     s[0] = s[0] | (1<<x)
+    return
+
+def enumere():
+    
+    return
