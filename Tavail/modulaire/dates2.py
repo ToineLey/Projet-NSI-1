@@ -18,8 +18,9 @@ def ajoute(s, x):
 def enumere(s):
     tab = []
     for ientier in s:
-      for bit in 1 << ientier:
-        tab.append(bit)
+      for bit in range(64):
+          if ientier & (1<<bit) != 0:
+              tab.append(bit*ientier)
     return tab
 
 
