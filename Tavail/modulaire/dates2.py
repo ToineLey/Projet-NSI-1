@@ -25,4 +25,7 @@ def enumere(s):
 
 
 def union(s4,s5):
-    return 
+    return [s4[i] | s5[i] for i in range(len(s4))]
+
+def intersection(s4,s5):
+    return [s4[i] & s5[i] for i in range(len(s4))]
