@@ -19,7 +19,7 @@ def enumere(s):
     tab = []
     ientier = 0
     for ientier in s:
-      for bit in 1<<ientier:
+      for bit in 1 << ientier:
         tab.append(bit)
     return tab
 
