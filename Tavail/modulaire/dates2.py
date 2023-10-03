@@ -18,16 +18,16 @@ def ajoute(s, x):
 def enumere(s):
     tab = []
     ientier = 0
-    
-    
-    return 
+    for ientier in s:
+      for bit in 1<<ientier:
+        tab.append(bit)
+    return tab
 
 
 def union(s1, s2):
     s4=[]
-    s3 = intersection(s1, s2)
     for elem in s1:
-        if s3 not in s2:
+        if elem not in s2:
             s4.append(elem)
     return s4
 
