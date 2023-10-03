@@ -17,10 +17,10 @@ def ajoute(s, x):
 
 def enumere(s):
     tab = []
-    for ientier in s:
+    for ientier in range(len(s)):
       for bit in range(64):
           if ientier & (1<<bit) != 0:
-              tab.append(bit*ientier)
+              tab.append(ientier*64+bit)
     return tab
 
 
