@@ -1,13 +1,14 @@
-from divi import pgcd
+from Tavail.POO.divi import *
+
 
 
 class Fraction:
     def __init__(self, num, den):
-        self.numerateur = num
+        self.numerateur = num // pgcd(num,den)
         if den <= 0:
             raise ValueError("Fraction avec dénominateur à 0")
         else:
-            self.denominateur = den
+            self.denominateur = den // pgcd(num,den)
 
     def __str__(self):
         n = str(self.numerateur)
@@ -42,5 +43,3 @@ class Fraction:
             self.numerateur*autre.numerateur,
             self.denominateur*autre.denominateur
         )
-    def _irre(self):
-        return
