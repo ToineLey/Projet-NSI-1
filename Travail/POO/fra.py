@@ -1,4 +1,4 @@
-from Tavail.POO.divi import *
+from Travail.POO.divi import *
 
 
 

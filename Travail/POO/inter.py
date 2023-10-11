@@ -1,4 +1,4 @@
-class Intervale:
+class Intervalle:
     def __init__(self,inf,sup):
       if inf > sup:
         self.borne_inf = 0
@@ -14,8 +14,8 @@ class Intervale:
     def __len__(self):
       a = self.borne_sup - self.borne_inf
       return a
-    def __contain__(self,x):
-      return x >= self.borne_inf and x <= self.borne_sup
+    def __contains__(self,x):
+      return x.borne_inf >= self.borne_inf and x.borne_sup <= self.borne_sup
     def __eq__(self,x):
       if len(self) == 0 and len(x)== 0:
         return True
