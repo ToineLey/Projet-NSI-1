@@ -9,10 +9,10 @@ class Intervalle:
       self.borne_sup = sup
 
   def est_vide(self):
-    return if self.borne_inf = 0 and self.borne_sup = 0
+    return self.borne_inf == 0 and self.borne_sup == 0
   
   def __str__(self):
-    if self.borne_inf == 0 or self.borne_sup == 0:
+    if self.borne_inf == 0 and self.borne_sup == 0 and self.est_vide == True:
       return "∅"
     else:
       return "[self.borne_inf,self.borne_sup]"
