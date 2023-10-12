@@ -12,7 +12,7 @@ class Intervalle:
     if self.borne_inf == 0 or self.borne_sup == 0:
       return "∅"
     else:
-      return "[{},{}]".format(self.borne_inf, self.borne_sup)
+      return "[self.borne_inf,self.borne_sup]"
 
   def __len__(self):
     a = self.borne_sup - self.borne_inf + 1
