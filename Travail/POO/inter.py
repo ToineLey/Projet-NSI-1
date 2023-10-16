@@ -66,4 +66,9 @@ class Intervalle:
   def union_2(self, x):
     inf = min(self.borne_inf, x.borne_inf)
     sup = max(self.borne_sup, x.borne_sup)
-    return Intervalle(inf, sup)
+    if self.est_vide():
+      return x
+    elif x.est_vide():
+      return self
+    else:
+      return Intervalle(inf, sup)
