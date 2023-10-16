@@ -1,7 +1,6 @@
 from Travail.Poo.table import Table
 
 
-
 db_tab = DbTab([1, 2, 3], [4, 5, 6])
 assert db_tab.imin() == -3
 assert db_tab.imax() == 2
