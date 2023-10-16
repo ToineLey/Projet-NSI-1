@@ -7,7 +7,7 @@ class Angle:
             if 0 <= an <= 360:
                 self.angle = an
             else:
-                raise IndexError("Le nombre doit être entre 0 et 360 inclus")
+                self.angle = an % 360
         else:
             raise TypeError("Le nombre doit être un entier")
 
@@ -16,7 +16,6 @@ class Angle:
 
     def ajoute(self, x):
         self.angle += x.angle
-        return self
 
     def cos(self):
         return cos(self.angle) * (pi/180)
