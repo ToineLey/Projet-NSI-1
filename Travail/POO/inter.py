@@ -45,12 +45,12 @@ class Intervalle:
       if x.borne_inf <= self.borne_sup:
         return Intervalle(x.borne_inf, self.borne_sup)
       else:
-        return Intervalle(0, 0)
+        return Intervalle(1, 0)
     else:
       if self.borne_inf <= x.borne_sup:
         return Intervalle(self.borne_inf, x.borne_sup)
       else:
-        return Intervalle(0, 0)
+        return Intervalle(1, 0)
 
   def union(self, x):
     if self.borne_sup < x.borne_sup:

@@ -1,4 +1,4 @@
-from math import pi, cos, sin
+import math
 
 
 class Angle:
@@ -18,9 +18,9 @@ class Angle:
         self.angle += x.angle
 
     def cos(self):
-        return cos(self.angle) * (pi/180)
+        return math.cos(self.angle) * (math.pi/180)
 
     def sin(self):
-        return sin(self.angle) * (pi/180)
+        return math.sin(self.angle) * (math.pi/180)
 
         
