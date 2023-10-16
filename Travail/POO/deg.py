@@ -18,9 +18,9 @@ class Angle:
         self.angle += x.angle
 
     def cos(self):
-        return math.cos(self.angle) * (math.pi/180)
+        return math.cos((self.angle) * (math.pi/180))
 
     def sin(self):
-        return math.sin(self.angle) * (math.pi/180)
+        return math.sin((self.angle) * (math.pi/180))
 
         
