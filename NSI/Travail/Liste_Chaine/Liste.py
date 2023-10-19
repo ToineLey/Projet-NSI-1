@@ -1,7 +1,7 @@
 class Cellule:
 
     def __init__(self,v,s):
-        self.valeu = v
+        self.valeur = v
         self.suivante = s
 
 def longueur(lst):
@@ -76,16 +76,16 @@ def nieme_element(lst,n):
     else:
         return lst.valeur
 
-def ocurences(x,lst):
+def occurences(x,lst):
     if lst is None:
         return 0
     else:
         if x==lst.valeur:
-            return 1 + ocurences(x,lst.suivante)
+            return 1 + occurences(x,lst.suivante)
         else:
-            return ocurences(x,lst.suivante)
+            return occurences(x,lst.suivante)
 
-def ocurences2(x,lst):
+def occurences2(x,lst):
     a=0
     c=lst
     while c is not None:
@@ -95,4 +95,10 @@ def ocurences2(x,lst):
     return a
 
 def trouve(x,lst):
+    if lst is None:
+        return None
+    elif occurences(x,lst)==0:
+        return None
+    elif x != lst.valeur:
+        return 1+trouve(x,lst.suivante)
         
