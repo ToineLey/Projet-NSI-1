@@ -94,11 +94,21 @@ def occurences2(x,lst):
         c=c.suivante
     return a
 
-def trouve(x,lst):
+def inserer(x, lst):
     if lst is None:
-        return None
-    elif occurences(x,lst)==0:
-        return None
-    elif x != lst.valeur:
-        return 1+trouve(x,lst.suivante)
+        return Cellule(x, None)
+    elif x < lst.valeur:
+        return Cellule(x, lst)
+    else:
+        return Cellule(lst.valeur, inserer(x, lst.suivante))
         
+
+def tri_par_insertion(lst):
+    if lst is None or lst.suivante is None:
+        return lst
+    else:
+        tete = lst
+        reste = lst.suivante
+        tete.suivante = None
+        reste_trie = tri_par_insertion(reste)
+        return inserer(tete, reste_trie)
