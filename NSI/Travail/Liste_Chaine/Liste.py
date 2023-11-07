@@ -111,4 +111,4 @@ def tri_par_insertion(lst):
         reste = lst.suivante
         tete.suivante = None
         reste_trie = tri_par_insertion(reste)
-        return inserer(tete, reste_trie)
+        return inserer(tete.valeur, reste_trie)
