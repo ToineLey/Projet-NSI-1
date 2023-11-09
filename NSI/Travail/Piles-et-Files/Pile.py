@@ -21,25 +21,25 @@ class Pile:
 
 class File:
     def __init__(self):
-        self.tete = None
-        self.queue = None
+        self._tete = None
+        self._queue = None
 
     def est_vide(self):
-        return self.tete is None
+        return self._tete is None
 
     def ajouter(self, e):
         c = Cellule(e, None)
         if self.est_vide():
-            self.tete = c
+            self._tete = c
         else:
-            self.queue.suivante = c
-        self.queue = c
+            self._queue.suivante = c
+        self._queue = c
 
     def retirer(self):
         if self.est_vide():
             raise IndexError("retire un file vide")
-        v = self.tete.valeur
-        self.tete = self.tete.suivante
-        if self.tete is None:
-            self.queue = None
+        v = self._tete.valeur
+        self._tete = self._tete.suivante
+        if self._tete is None:
+            self._queue = None
         return v
