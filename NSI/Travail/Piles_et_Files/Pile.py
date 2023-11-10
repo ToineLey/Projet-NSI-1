@@ -1,6 +1,5 @@
 from NSI.Travail.Liste_Chaine.Liste import Cellule
 
-
 class Pile:
     def __init__(self):
         self._contenu = None
@@ -18,6 +17,8 @@ class Pile:
         self._contenu = self._contenu.suivante
         return v
 
+def creer_pile():
+  return Pile()
 
 class File:
     def __init__(self):
