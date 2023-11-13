@@ -17,19 +17,19 @@ class Historique:
             self.adresse_courante = None
 
 # ****************** TESTS ******************
- h = Historique()
- assert h.adresse_courante is None
- h.aller_a("www.stackoverflow.com")
- assert h.adresse_courante == "www.stackoverflow.com"
- h.aller_a("www.developper.com")
- h.retour()
- assert h.adresse_courante == "www.stackoverflow.com"
- h.aller_a("www.w3schools.com")
- h.aller_a("openclassroom.com")
- h.retour()
- assert h.adresse_courante == "www.w3schools.com"
- h.retour()
- assert h.adresse_courante == "www.stackoverflow.com"
+h = Historique()
+assert h.adresse_courante is None
+h.aller_a("www.stackoverflow.com")
+assert h.adresse_courante == "www.stackoverflow.com"
+h.aller_a("www.developper.com")
+h.retour()
+assert h.adresse_courante == "www.stackoverflow.com"
+h.aller_a("www.w3schools.com")
+h.aller_a("openclassroom.com")
+h.retour()
+assert h.adresse_courante == "www.w3schools.com"
+h.retour()
+assert h.adresse_courante == "www.stackoverflow.com"
  # on teste "retour" lorsqu'il n'y plus d'adresse antérieure
- h.retour()
- assert h.adresse_courante is None
+h.retour()
+assert h.adresse_courante is None
