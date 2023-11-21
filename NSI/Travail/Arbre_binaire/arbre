@@ -45,3 +45,17 @@ def parfait(h):
     
 a = parfait(5)
 print(str_arbre(a))
+
+
+
+
+"""
+    (1)
+    /  \
+  (0)  (0)
+  / \  / \
+(a)(a)(a)(a)
+
+
+
+"""
