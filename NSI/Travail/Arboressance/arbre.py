@@ -82,13 +82,18 @@ def stat_xml(d: DOM):
     return e,a,t
 
 def gen_doc(n):
+    
     doc = dom.parseString("<a></a>")
+    a = doc.childNodes[0]
     for i in range(n):
         b = doc.createElement("b")
         m = doc.createText(str(i))
         b.appendChild(m)
-    doc.appendChild(b)
-    doc.toxml()
+        a.appendChild(b)
+    with open("docn.xml","w") as f:
+        f.write(doc.toxml())
+        
+    
         
 
 
