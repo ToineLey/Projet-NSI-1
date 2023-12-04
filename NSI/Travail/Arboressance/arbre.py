@@ -78,6 +78,7 @@ def stat_xml(d: DOM):
         t+=1
     for elt in d.childNodes:
         e1,a1,t1=stat_xml(elt)
+        e,a,t=e1,a1,t1
     return e,a,t
 
 
