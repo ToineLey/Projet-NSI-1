@@ -47,7 +47,7 @@ def repertoires(r: str) -> Noeud:
     return Noeud(r, fils)
 
 
-def compte_balise(d: dom, n) -> int:
+"""def compte_balise(d: DOM, n) -> int:
     if d.childNodes == []:
         return 0
     elif d.parentNode is None:
@@ -57,4 +57,30 @@ def compte_balise(d: dom, n) -> int:
             if d.nodeName == n:
                 return 1+compte_balise(el, n)
             else:
-                return 0+compte_balise(el, n)
+                return 0+compte_balise(el, n)"""
+def compte_balise(d: DOM, n) -> int:
+    nb=0
+    if d.nodeName==n:
+        nb+=1
+    for el in d.childNodes:
+        nb+=compte_balise(el,n)
+    return nb
+
+
+
+
+def stat_xml(d: DOM):
+    e,a,t=0,0,0
+    if d.nodeType==dom.Node.ELEMENT_NODE:
+        e+=1
+        a+=len(d.attributes)
+    elif d.nodeType==dom.Node.TEXT:
+        t+=1
+    for elt in d.childNodes:
+        e1,a1,t1=stat_xml(elt)
+    return e,a,t
+
+
+
+
+
