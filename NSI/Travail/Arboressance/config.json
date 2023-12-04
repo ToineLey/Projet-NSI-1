@@ -1,5 +1,6 @@
 {
-  mode:{
-  nom:"Bob"
+  "mode":{
+    "nom":"bob";
+    "bonjour"
   }
 }
