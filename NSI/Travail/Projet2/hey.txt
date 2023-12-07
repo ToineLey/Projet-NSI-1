@@ -1,0 +1,4 @@
+La grille est de 13 par 11
+
+Les bombes font des croix et s'arrêtent au niveau des briques pour les exploser.
+Elles s'arrement aussi au nuveau des piller mais c'est un arret
