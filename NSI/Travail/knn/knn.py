@@ -37,4 +37,10 @@ def exiii(m: str) -> None:
     exii(m,min(t))
     
 
-exiii('ok')
+def possible_retirer(c,d):
+    if len(d)!=len(c)+1:
+        return False
+    for i in range(len(d)-1):
+        if d[i]!=c[i]:
+            return c[i:]==d[i+1:]
+    return True
