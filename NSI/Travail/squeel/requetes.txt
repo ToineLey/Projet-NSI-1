@@ -1,0 +1,8 @@
+EX 1
+
+1. SELECT titre FROM livre;
+2. SELECT nom FROM usager;
+3. SELECT nom FROM usager;
+4. SELECT titre FROM livre WHERE annee < 1980;
+5. SELECT titre FROM livre WHERE titre LIKE '%A%';
+6. SELECT isbn FROM emprunt WHERE retour = '2020-01-01';
