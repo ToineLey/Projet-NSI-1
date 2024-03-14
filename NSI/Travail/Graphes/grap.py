@@ -15,6 +15,15 @@ class Graphe1:
             if self.adj[s][i]:
                 v.append(i)
         return v
+    def __str__(self):
+        a=""
+        for i in range(self.n):
+            a+="->"
+            for j in range(self.n):
+                if self.adj[i][j]:
+                    a+=str(j)
+            a+="\n"
+        return a
 
 class Graphe2:
     def __init__(self):
@@ -40,13 +49,13 @@ class Graphe2:
     
     def __str__(self):
         a=""
-        for i in range(len(self.adj)):
-            a+=str(i)+":"+str(self.adj[i])+"\n"
+        for key in self.adj:
+            a+=str(key)+":"+str(self.adj[key])+"\n"
         return a
     def nombre_sommets(self):
         a=0
-        for i in range(len(self.adj)):
-            if self.adj[i]!=set():
+        for key in self.adj:
+            if self.adj[key]!=set():
                 a+=1
         return a
 
