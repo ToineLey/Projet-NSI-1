@@ -1,4 +1,4 @@
-from graphe import Graphe2,mex,coloriage
+from graphe import *
 
 g = Graphe2()
 g.ajouter_arc_no("Bretagne", "Pays de la Loire")
@@ -31,5 +31,4 @@ g.ajouter_sommet("Mayotte")
 g.ajouter_sommet("La Réunion")
 g.ajouter_sommet("Corse")
 
-for i in range(len(g.adj)):
-    print(g.degre(i))
+print(g)

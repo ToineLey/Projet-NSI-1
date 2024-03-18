@@ -57,7 +57,7 @@ class Graphe2:
         self.ajouter_sommet(s1)
         self.ajouter_sommet(s2)
         self.adj[s1].add(s2)
-    
+
     def ajouter_arc_no(self, s1, s2):
         self.ajouter_sommet(s1)
         self.ajouter_sommet(s2)
@@ -102,6 +102,12 @@ class Graphe2:
                 a.append(val)
         self.adj[s1] = a
 
+    def est_connexe(self):
+        for somm in self.adj:
+            if somm == set():
+                return False
+        return True
+
 
 def mex(voisins, couleur):
     n = len(voisins)
@@ -125,11 +131,35 @@ def coloriage(g):
     return couleur, n
 
 
-g = Graphe1(4)
-g.ajouter_arc(0, 1)
-g.ajouter_arc(0, 3)
-g.ajouter_arc(1, 2)
-g.ajouter_arc(1, 3)
-g.ajouter_arc(2, 3)
+def parcours(g, vus, s):
+    if s not in vus:
+        vus.add(s)
+        for v in g.voisins(s):
+            parcours(g, vus, v)
 
-print(g.adj)
+
+def existe_chemin(g, u, v):
+    vus = set()
+    parcours(g, vus, u)
+    return v in vus
+
+
+def parcours_largeur(g, source):
+    dist = {source: 0}
+    courant = {source}
+    suivant = set()
+    while len(courant) > 0:
+        s = courant.pop()
+        for v in g.voisins(s):
+            if v not in dist:
+                suivant.add(v)
+                dist[v] = dist[s]+1
+        if len(courant) == 0:
+            courant, suivant = suivant, set()
+    return dist
+
+
+def distance(g, u, v):
+    dist = parcours_largeur(g, u)
+    return dist[v] if v in dist else None
+       
