@@ -102,12 +102,6 @@ class Graphe2:
                 a.append(val)
         self.adj[s1] = a
 
-    def est_connexe(self):
-        for somm in self.adj:
-            if somm == set():
-                return False
-        return True
-
 
 def mex(voisins, couleur):
     n = len(voisins)
@@ -162,4 +156,30 @@ def parcours_largeur(g, source):
 def distance(g, u, v):
     dist = parcours_largeur(g, u)
     return dist[v] if v in dist else None
-       
+
+
+def est_connexe(g):
+    vus = set()
+    parcours(g, vus, g.sommets()[0])
+    for s in g.sommets:
+        if s not in vus:
+            return False
+    return True
+
+
+def parcours_ch(g, vus, org, s):
+    if s not in vus:
+        vus[s] = org
+        for v in g.voisins(s):
+            parcours_ch(g, vus, s, v)
+
+
+def chemin(g, u, v) -> list:
+    vus = dict()
+    parcours_ch(g, vus, None, u)
+    t = [v]
+    a = vus[v]
+    while a is not None:
+        t.append(a)
+        a = vus[a]
+    return list(reversed(t))

@@ -31,4 +31,4 @@ g.ajouter_sommet("Mayotte")
 g.ajouter_sommet("La Réunion")
 g.ajouter_sommet("Corse")
 
-print(g)
+print(chemin(g,'Bretagne',"Provence-Alpes-Côte d'Azur"))
