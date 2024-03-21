@@ -1,8 +1,7 @@
 from Arbre_binaire.arbre import Noeud
 
-def parcours_largeur(arbre, racine):
-    dist = {racine: 0}
-    courant = {racine}
+def parcours_largeur(arbre):
+    courant = {arbre}
     droite = arbre.droit
     gauche = arbre.gauche
     suivant = set
